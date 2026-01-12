@@ -3,3 +3,4 @@ Full Stack Web Development Journey  This repo contains the questions, tasks, and
 The final outputs are given with resective files.
 
 01 - About me page : This small project is primarily built using HTML, with minimal use of CSS.
+02 - It's a form page primarily built using HTML, with minimal use of CSS.
