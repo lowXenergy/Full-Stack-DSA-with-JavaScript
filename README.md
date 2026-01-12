@@ -5,3 +5,5 @@ The final outputs are given with resective files.
 01 - About me page : This small project is primarily built using HTML, with minimal use of CSS.
 
 02 - It's a form page primarily built using HTML, with minimal use of CSS.
+
+03 - It's question and answers based on Variables (var, let, const) and Data Types.
