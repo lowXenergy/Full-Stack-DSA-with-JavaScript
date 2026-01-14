@@ -1,0 +1,301 @@
+## LEVEL 1: EASY — CONTROL FLOW BASICS
+
+1. What is the purpose of `if` and `else` statements in JavaScript?
+the if and else statements are used to control the flow of data based on some conditions in our JavaScript. The else statement will only execute if the if statement does't execute.
+
+2. When do we use `else if` instead of multiple `if` statements?
+We use else if when we have to make decision according to the given multiple conditions.
+
+3. What happens if none of the `if` / `else if` conditions match and there is **no `else`**?
+Any code written in `if` / `else if` conditions will not be executed.
+
+4. Write a simple `if–else` statement that checks if a number is positive or negative.
+let a = 10;
+if(a<0) console.log("Negative number");
+else console.log("Positive number");
+
+5. What will be the output?
+
+   ```js
+   let age = 18;
+
+   if (age >= 18) {
+     console.log("Adult");
+   } else {
+     console.log("Minor");
+   }
+   ```
+   Adult will be printed because the if statement evaluates to true and the control will flow outside the if-else statement.
+
+---
+
+## LEVEL 2: MEDIUM — LOGIC & FLOW CONTROL
+
+6. Predict the output:
+
+   ```js
+   let score = 75;
+
+   if (score > 90) {
+     console.log("A");
+   } else if (score > 70) {
+     console.log("B");
+   } else if (score > 50) {
+     console.log("C");
+   } else {
+     console.log("Fail");
+   }
+   ```
+   B will be printed because the fist else if statement evaluates to true and then the control will flow outside of the code block.
+
+7. Why does **order of conditions** matter in `else if` chains? Explain using an example.
+Order of conditions matter in else if chain because the conditions ae evaluated from top to bottom and we might left the conditions that are in bottom.
+let marks = 85;
+
+if (marks > 50) {
+  console.log("Pass");
+} else if (marks > 80) {
+  console.log("Excellent");
+}
+
+
+8. Convert this logic into a `switch` statement:
+
+   ```js
+   let day = 3;
+   // 1 → Monday, 2 → Tuesday, 3 → Wednesday
+   ```
+let day = 3;
+switch(day){
+case 1: console.log("Monday"); break;
+case 2: console.log("Tuesday"); break;
+case 3: console.log("Wednesday"); break;
+case 4: console.log("Thursday"); break;
+case 5: console.log("Friday"); break;
+case 6: console.log("Saturday"); break;
+case 7: console.log("Sunday"); break;
+default: console.log("Enter the day between 1-7");}
+
+9. What happens if you forget `break` in a `switch` case?
+If we forget break iin switch case then every statement will be executed after the first true statement is executed. eg.
+let day = 3;
+switch(day){
+case 1: console.log("Monday"); 
+case 2: console.log("Tuesday");
+case 3: console.log("Wednesday"); 
+case 4: console.log("Thursday");
+case 5: console.log("Friday"); 
+case 6: console.log("Saturday"); 
+case 7: console.log("Sunday"); 
+default: console.log("Enter the day between 1-7");}
+ Wednesday
+ Thursday
+ Friday
+ Saturday
+ Sunday
+ Enter the day between 1-7
+In this snippet we have't used break and it is executing it's even after we got 
+
+10. Predict the output:
+
+    ```js
+    let x = 10;
+
+    if (x > 5) {
+      console.log("A");
+    } else if (x > 8) {
+      console.log("B");
+    } else {
+      console.log("C");
+    }
+    ```
+Output would be A because the if statement evaluates to true so the code is executed and the control flow is gone outside the loop.
+
+---
+
+## LEVEL 3: HARD — REAL-WORLD SCENARIOS
+
+11. Write a program that:
+
+    * Takes a user’s age
+    * Prints:
+
+      * `"Child"` (0–12)
+      * `"Teen"` (13–19)
+      * `"Adult"` (20–59)
+      * `"Senior"` (60+)
+
+let age = +prompt("Enter your age");
+if(age <=12) console.log("Child");
+else if(age<=19)console.log("Teen");
+else if(age<=59)console.log("Adult");
+else console.log("Senior");
+
+
+12. Write logic for a **login system**:
+
+    * If username is empty → `"Username required"`
+    * Else if password is empty → `"Password required"`
+    * Else → `"Login successful"`
+let username = prompt("Enter your user name");
+let password = prompt("Enter your password");
+if(username.trim() ==="") console.log("Username required");
+else if(password.trim() === "") console.log("Password required");
+else console.log("Login successful");
+
+13. Rewrite Question 12 using **early return** to make the code cleaner.
+
+function earlyReturn(){
+let username = prompt("Enter your user name");
+let password = prompt("Enter your password");
+if(username.trim() ===""){ return "Username required"};
+if (password.trim() === "") {return "Password required"};
+return "Login successful";
+}
+console.log(earlyReturn());
+
+14. When should you prefer **early return** instead of deep `if–else` nesting?
+You should prefer **early return** when handling invalid conditions or edge cases first, to avoid deep `if–else` nesting and keep the function clean, readable, and easy to maintain.
+
+
+15. Convert this `if–else` into a `switch`:
+
+    ```js
+    let role = "admin";
+    if (role === "admin") {
+  console.log("Full access");
+} else if (role === "editor") {
+  console.log("Edit access");
+} else {
+  console.log("View only");
+}
+
+    ```
+
+switch (role) {
+  case "admin":
+    console.log("Full access");
+    break;
+  case "editor":
+    console.log("Edit access");
+    break;
+  default:
+    console.log("View only");
+}
+
+---
+
+## LEVEL 4: VERY HARD — PRODUCTION-STYLE THINKING
+
+16. Predict the output and explain **why**:
+
+    ```js
+    function checkNumber(num) {
+      if (!num) {
+        return "No number";
+      }
+
+      if (num > 0) {
+        return "Positive";
+      }
+
+      return "Negative";
+    }
+
+    console.log(checkNumber(0));
+    ```
+No number would be the output because we are using early return and the first if evaluates to true and the control flow return back after executing the first if statement.
+
+
+17. Fix the bug in this code:
+
+    ```js
+    function isEligible(age) {
+      if (age >= 18)
+        return "Eligible";
+      else
+        return "Not eligible";
+        console.log("Checked");
+    }
+    ```
+The correct code is following
+function isEligible(age) {
+    console.log("Checked");
+
+    if (age >= 18) {
+        return "Eligible";
+    } else {
+        return "Not eligible";
+    }
+}
+
+Any statement written after a return will never execute, so it must be placed before the return or the returns must be restructured.
+
+18. Write a function that:
+
+    * Takes a number
+    * Immediately returns `"Invalid input"` if it is not a number
+    * Otherwise returns `"Even"` or `"Odd"`
+
+function checkEvenOdd(value) {
+  if (typeof value !== "number") return "Invalid input";
+  return value % 2 === 0 ? "Even" : "Odd";
+}
+
+
+console.log(checkNumber());
+
+19. Design logic for an **e-commerce discount system**:
+
+    * Cart value < 500 → No discount
+    * 500–1000 → 5% discount
+    * 1000–5000 → 10% discount
+    * > 5000 → 20% discount
+
+function discount() {
+    let amt = prompt("Enter the amount");
+
+    if (amt === null) return "NO SHOPPING DONE";
+    if (amt.trim() === "") return "NO SHOPPING DONE";
+
+    let value = Number(amt);
+
+    if (isNaN(value)) return "Not a number";
+    if (value < 500) return "No discount";
+    if (value <= 1000) return "5% discount";
+    if (value <= 5000) return "10% discount";
+    return "20% discount";
+}
+
+console.log(discount());
+
+
+20. You are validating a form:
+
+    * Name must not be empty
+    * Email must not be empty
+    * Age must be >= 18
+
+Write logic using **early return** so invalid input stops execution immediately.
+  
+ function validation() {
+    let name = prompt("Enter your name");
+    if (name === null) return "Name input cancelled";
+    if (name.trim() === "") return "Name is required";
+
+    let email = prompt("Enter your email");
+    if (email === null) return "Email input cancelled";
+    if (email.trim() === "") return "Email is required";
+
+    let age = prompt("Enter your age");
+    if (age === null) return "Age input cancelled";
+    if (age.trim() === "") return "Age is required";
+
+    let ageValue = Number(age);
+    if (isNaN(ageValue)) return "Age must be a number";
+    if (ageValue < 18) return "You are under age";
+
+    return "Form validated";
+}
+
+console.log(validation());
