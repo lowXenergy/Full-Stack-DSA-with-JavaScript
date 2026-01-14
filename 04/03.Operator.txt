@@ -1,0 +1,170 @@
+# Level 1: Easy (Basics)
+
+1. What are operators in JavaScript?
+Operators are the symbols that performs operations on operands.
+
+2. Name **five types of operators** in JavaScript.
+Assignment , logical , airthematic , unary , bitwise. 
+
+3. What does the `typeof` operator return?
+It return string which indicate the type of the operand's value like undefined , string , object etc.
+
+4. What will be the output?
+
+   ```js
+   console.log(typeof "Hello"); 
+   //It's output will be string because it is string data type.
+   ```
+5. What will be the output?
+
+   ```js
+   console.log(typeof 100);
+   number
+   ```
+6. What is the output?
+
+   ```js
+   console.log(typeof true);
+   boolean
+   ```
+7. What does the `instanceof` operator check?
+It is used to check weather a object is instance of a class or constructor or not. It checks whether an object inherits from a constructor’s prototype.
+
+8. What will this return?
+
+   ```js
+   [] instanceof Array
+
+   It will return true.
+   ```
+
+---
+
+# Level 2: Medium (Understanding & Application)
+
+9. Predict the output:
+
+   ```js
+   console.log(typeof null);
+
+   'object'
+   ```
+10. Predict the output:
+
+    ```js
+    console.log(typeof undefined);
+
+    'undefined'
+    ```
+11. What will be printed?
+
+    ```js
+    let x = 10;
+    let y = "10";
+    console.log(x + y);
+
+    "1010" because y is a string and + performs concatition in string(type coercion)
+    ```
+12. Predict the output:
+
+    ```js
+    let a = 10;
+    let b = 5;
+    console.log(a > b); --> true
+    console.log(a <= b); --> false
+    ```
+13. What is the difference between `typeof` and `instanceof`?
+The typeof operator return a string which indicates the type of operand's value but instanceof return boolean value which tells us weather a object is an instance of a class or not.
+typeof cannot detect arrays and instanceof fails across execution contexts (iframes).
+
+14. Predict the output:
+
+    ```js
+    let arr = [];
+    console.log(typeof arr); --> object
+    console.log(arr instanceof Array); --> true
+    ```
+
+15. What will this log?
+
+    ```js
+    console.log(typeof function () {}); --> function
+    ```
+
+---
+
+# Level 3: Hard (Tricky & Conceptual)
+
+16. Predict the output and explain:
+
+    ```js
+    console.log(typeof NaN); --> number because NaN is a special numeric value.
+    ```
+17. Predict the output:
+
+    ```js
+    console.log(10 + "5" - 2); --> 103 because 10+"5" = 105 and 105-2 = 103.(type coercion) and - forces numeric conversion
+    ```
+18. What will this return?
+
+    ```js
+    let obj = {};
+    console.log(obj instanceof Object); --> true because obj belongs to object and All objects inherit from Object.prototype unless explicitly changed.
+    ```
+19. Predict the output:
+
+    ```js
+    let value = "5";
+    console.log(typeof (value + 5)); --> "string" because + operator perform concatition in string and 5 will be concaneted in value.(type coercion)
+
+    ```
+20. Why does this give an unexpected result?
+
+    ```js
+    console.log(typeof []); --> because Arrays are objects in JavaScript; there is no separate array type.
+    ```
+
+---
+
+# Level 4: Practical Questions (Hands-On)
+
+21. Write code to check whether a variable contains a **number** using `typeof`.
+let a = 33;
+typeof a === "number"
+
+
+22. Write code to check whether a variable is an **array** using `instanceof`.
+let arr =[];
+arr instanceof Array;
+
+23. Write a small program that:
+
+    * Stores two values (number + string)
+    * Adds them
+    * Prints the **result and its data type**
+
+let a =22;
+let b='2';
+let c = a+b;
+console.log(c); --> 222
+console.log(typeof c); --> 'string'
+
+
+24. Write a condition that prints:
+
+    * `"Valid number"` if the value is a number
+    * `"Not a number"` otherwise
+      *(Use only `typeof` and operators)*
+let a=2;
+(typeof a === 'number')?console.log("Valid number"):console.log("Not a number");
+
+
+
+25. Explain when you would prefer `instanceof` over `typeof` with an example.
+I will prefer instanceof when I want to know weather my object is the part of a particular class or constructor and I will be using typeof when I want to konw the data type of my operands or variable. eg.
+typeof []        // "object"
+[] instanceof Array // true
+
+---
+
+
