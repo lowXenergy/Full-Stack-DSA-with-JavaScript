@@ -8,4 +8,4 @@ The final outputs are given with resective files.
 
 03 - It's question and answers based on Variables (var, let, const) and Data Types.
 
-04 - A portfolio website made using HTML and CSS and q&a based on operators.
+04 - A portfolio website made using HTML and CSS and q&a based on operators.(you have to download the finalOutput video to see the final output because currently github does't run files this big.
