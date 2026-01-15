@@ -11,3 +11,5 @@ The final outputs are given with resective files.
 04 - A portfolio website made using HTML and CSS and q&a based on operators.(you have to download the finalOutput video to see the final output because currently github does't play files of this size.)
 
 05 - A hero section is made using HTML and CSS and q&a based on conditional statements and early return type.
+
+06 -  A website page is made using HTML and CSS and q&a based on loops.
