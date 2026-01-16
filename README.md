@@ -13,3 +13,5 @@ The final outputs are given with resective files.
 05 - A hero section is made using HTML and CSS and q&a based on conditional statements and early return type.
 
 06 -  A website page is made using HTML and CSS and q&a based on loops.
+
+07 -  A website is made using HTML and CSS and q&a based on loops.
