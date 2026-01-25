@@ -1,6 +1,4 @@
-# FULL-STACK-WEBDEVELOPMENT
-Full Stack Web Development Journey  This repo contains the questions, tasks, and projects I create while learning full stack web development. It’s a work in progress and will be updated as I learn and build more.
-The final outputs are given with resective files.
+Learning Full Stack Web Development and dsa through Sheriyans Coding School (Cohort 2). This repository contains my practice work, projects, and DSA with JavaScript. It is a work in progress and updated as I continue learning.
 
 01 - About me page : This small project is primarily built using HTML, with minimal use of CSS.
 
