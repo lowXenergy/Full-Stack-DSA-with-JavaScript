@@ -13,3 +13,7 @@ Learning Full Stack Web Development and dsa through Sheriyans Coding School (Coh
 06 -  A website page is made using HTML and CSS and q&a based on loops.
 
 07 -  A website is made using HTML and CSS and q&a based on loops.
+
+b-01 - Backend basics.
+
+b-02 - All about programming server.
