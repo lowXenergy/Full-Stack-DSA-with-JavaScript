@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    /* background-color: black; */
+    /* color: white; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* NAVBAR */
+#nav{
+    padding: 10px 58px;
+}
+
+#nav a{
+    /* color: white; */
+    text-decoration: none;
+    margin-right: 30px;
+    font-size: 25px;
+    color: black;
+}
+
+/* MAIN HEADING */
+#main > h1{
+    font-size: 350px;
+    padding-left: 70px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* LEFT BOTTOM TEXT */
+#btmleft{
+    position: absolute;
+    width: 300px;
+    bottom: 20%;
+    left: 3%;
+}
+
+#btmleft h3,
+#btmleft h4{
+    font-size: 30px;
+}
+
+#btmleft p{
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+#btmleft h4{
+    margin-top: 50px;
+}
+
+/* BOTTOM BAR */
+#bottombar{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 58px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bottombar h1{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#bottombar a{
+    text-decoration: none;
+    font-size: 32px;
+    /* color: white; */
+    color: black;
+    position: relative;
+}
+#bottombar a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+#bottombar a:hover::after{
+    width: 100%;
+
+}
+/* IMAGES */
+#main > img{
+    position: absolute;
+    object-fit: cover;
+}
+
+/* INDIVIDUAL IMAGE PLACEMENT */
+#first{
+    height: 42vh;
+    top: 33%;
+    left: 55%;
+    z-index: 1;
+        border-radius: 5px;
+
+}
+
+#second{
+    height: 48vh;
+    top: 45%;
+    left: 40%;
+        border-radius: 5px;
+
+}
+
+#third{
+    height: 28vh;
+    top: 60%;
+    left: 67%;
+    z-index: 2;
+    border-radius: 5px;
+}
+
+

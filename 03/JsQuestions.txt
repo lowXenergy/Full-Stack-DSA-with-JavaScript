@@ -1,0 +1,132 @@
+## Level 1: Easy (Fundamentals)
+
+1. What is a variable in JavaScript?
+A variable is a named container used to store data values in memory.
+
+2. Write one example each using `var`, `let`, and `const`.
+var a = 10;
+let b =10;
+const c = 4;
+
+3. Which keyword should be used if the value of a variable should **not change**?
+Const keyword should be used if the value of a variable should not change.
+
+4. Name any **five JavaScript data types**.
+String, Number, Boolean, Undefined, Object
+
+5. What is the data type of:
+
+   * `"Hello"` ---> String
+   * 25 ---> Number
+   * true ---> Boolean
+
+6. Is JavaScript a **statically typed** or **dynamically typed** language? Explain briefly.
+
+JavaScript is a dynamically typed language because we can change the data type of a variable anythime we want and on any line we want. This is a feature but if we manage our code poorely the a problem arises because if we keep on changing the datatype of a variable then we will forget what was the variable orignal data type and we might end up manuplating the value of the datatype which hinders the capability of our program to generate the correct output.
+
+---
+
+## Level 2: Medium (Understanding & Behavior)
+
+7. What is the difference between `var` and `let`?
+Var is outdated. It is functionally scoped and it can me redeclared and reassigned multiple times and it is hoisted to the top with undefined value. 
+Let is modern and safe. It is blocked scoped. It can be reassigned but it cannot be redeclared and it is hoisted but it stayes in temporal dead zone(TDZ).
+
+8. Can a `const` variable be reassigned? What happens if you try?
+NO, const variable can not be reassigned. If we try to reassign const variable then we will get TypeError. 
+
+9. Identify the data type of the following:
+
+   ```js
+   let x = null; --> null
+   let y; --> undefined
+   let z = 10n;--> BigInt
+   ```
+10. What will be the output and why?
+
+```js
+let a = 5;
+let b = "5";
+console.log(a == b); --> true
+console.log(a === b); --> false
+```
+
+11. Why is `typeof null` considered a JavaScript bug? 
+typeof null returns "object" due to a historical bug in JavaScript. null is a primitive value, not an object.
+
+12. Write a variable declaration that stores:
+
+* Your age. --> let age = 12;
+* Whether you are a student. --> let isStudent = true;
+* Your name. --> let name = "";
+
+---
+
+## Level 3: Hard (Tricky & Conceptual)
+
+13. Predict the output:
+
+```js
+var x = 10;
+{
+  var x = 20;
+}
+console.log(x); --> 20
+```
+
+14. Predict the output:
+
+```js
+let y = 10;
+{
+  let y = 20;
+}
+console.log(y); --> 10
+```
+
+15. What will happen here? Explain.
+
+```js
+const person = {
+  name: "Alex"
+};
+
+person.name = "John";
+```
+Name would change from Alex to John. const prevents reassignment, not mutation. Object properties can still be changed.
+
+16. Identify **all data types** in the following code:
+
+```js
+const a = "100"; --> String
+const b = 100; --> Number
+const c = true; --> Boolean
+const d = null; --> Null
+const e = undefined; --> undefined
+```
+
+17. Why is `const` preferred over `var` in modern JavaScript?
+const is block-scoped, prevents reassignment, reduces bugs, and avoids hoisting issues seen with var.
+
+---
+
+## Level 4: Challenge (Logic + Explanation)
+
+18. Without running the code, explain the output:
+
+```js
+let value = "10";
+value = value + 1;
+console.log(value); --> 101
+```
+
+19. Write code to prove that JavaScript allows **changing data types of the same variable**.
+
+let a = 10;
+a="String";
+
+20. Explain the difference between **primitive** and **non-primitive** data types using examples (only concepts you know).
+primitive data type are stored directly i.e. if we want to copy the value of primitive data type then only the copy will be copied. eg: String, Number, boolean , BigInt,Null , Undefined.
+
+Reference data type is stored as a memory reference i.e. if we want to copy the value of reference data type then instead of giveing the copy of the variable it will give it's memory address and if we tried to change any thing in that then the changes would be reflected on the orignal variable too.
+---

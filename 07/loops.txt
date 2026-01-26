@@ -1,0 +1,97 @@
+# LEVEL 4: VERY HARD — INDUSTRY-LEVEL SCENARIOS
+
+16. You are processing payment transactions:
+
+    * Loop through transaction amounts
+    * Skip failed transactions (`amount <= 0`)
+    * Stop processing if a suspicious amount (`> 1,00,000`) is found
+let transactions = [1, 222, 333, -888, 10039, 99999, 100000, 0, 99, 8];
+
+for (let i = 0; i < transactions.length; i++) {
+  if (transactions[i] <= 0) continue;
+
+  if (transactions[i] >100000) break;
+
+  console.log(transactions[i]);
+}
+
+17. Write logic for **rate-limiting**:
+
+    * Allow a maximum of 5 requests
+    * Block further processing once limit is exceeded
+let requestCount = 0;
+const MAX_REQUESTS = 5;
+
+while (true) {
+  if (requestCount >= MAX_REQUESTS) {
+    console.log("Rate limit exceeded");
+    break;
+  }
+
+  prompt("Enter request");
+  requestCount++;
+}
+
+
+18. Write a loop that:
+
+    * Processes a list of tasks
+    * Skips completed tasks
+    * Stops if a critical task fails
+let tasks = [
+  { name: "Login", completed: true,  critical: false, status: "success" },
+  { name: "Fetch Data", completed: false, critical: false, status: "success" },
+  { name: "Payment", completed: false, critical: true,  status: "failed" },
+  { name: "Send Email", completed: false, critical: false, status: "success" }
+];
+
+for (let i = 0; i < tasks.length; i++) {
+  // Skip completed tasks
+  if (tasks[i].completed) continue;
+
+  // Stop if a critical task fails
+  if (tasks[i].critical && tasks[i].status === "failed") {
+    console.log("Critical task failed. Stopping process.");
+    break;
+  }
+
+  // Process task
+  console.log("Processing task:", tasks[i].name);
+}
+
+
+19. Debug this code:
+
+    ```js
+    let i = 0;
+    while (i < 5) {
+      console.log(i);
+    }
+    ```
+
+    * What is the issue?
+    * How do you fix it?
+Issue with the code is that it will run forever because 0<5. we can fix it by changing the condition from 0<5 --> 0>5.
+
+20. Refactor this code to be safer and more readable:
+
+    ```js
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] === null) {
+        continue;
+      }
+      if (data[i] < 0) {
+        break;
+      }
+      console.log(data[i]);
+    }
+    ```
+
+for (const value of data) {
+  if (value == null) continue;
+  if (value < 0) break;
+  console.log(value);
+}
+
+ 
+---

@@ -1,0 +1,162 @@
+# LEVEL 1: EASY — LOOP FOUNDATIONS
+
+1. What is a loop, and why are loops necessary in programming?
+A loop repeats a block of code until a condition is met. Loops are necessary in programming to make the program easy and to do repeatitive tasks like printing roll numbers from 1-100.
+
+2. What is the difference between `for` and `while` loops?
+for → known iteration count
+while → condition-driven iteration
+
+3. When should `do…while` be preferred over `while`?
+do...while is used when we want to run our program atlest once.
+
+4. Write a `for` loop to print numbers from 1 to 10.
+for(let i=1;i<11;i++){
+  console.log(i);
+}
+
+5. Write a `while` loop to print numbers from 10 to 1.
+let i = 10;
+while(i>0){
+  console.log(i);
+  i--;
+}
+
+6. What will be the output?
+
+   ```js
+   for (let i = 0; i < 3; i++) {
+     console.log(i);
+   }
+   ```
+   0
+   1
+   2
+
+---
+
+# LEVEL 2: MEDIUM — CONTROL & FLOW
+
+7. Predict the output:
+
+   ```js
+   let i = 0;
+
+   while (i < 5) {
+     if (i === 3) {
+       break;
+     }
+     console.log(i);
+     i++;
+   }
+   ```
+   0
+   1
+   2
+
+8. Predict the output:
+
+   ```js
+   for (let i = 1; i <= 5; i++) {
+     if (i === 3) continue;
+     console.log(i);
+   }
+   ```
+   1
+   2
+   4
+   5
+
+9. What is the difference between `break` and `continue`?
+When we use break we terminate the whole loop and then the control flow get out of the loop and when we use continue we simply skip the current iteration which satisfy the condition.
+
+10. Write a loop that prints **only even numbers** between 1 and 20.
+
+for(i=1;i<21;i++){
+  if(i%2==0){
+    console.log(i);
+  }
+}
+
+or
+
+for (let i = 2; i <= 20; i += 2) {
+  console.log(i);
+}
+
+
+11. Write a loop that stops execution when the number `7` is found.
+let i=1;
+while(i){
+  if(i==7) break;
+  console.log(i);
+  i++;
+}
+
+OR 
+
+let i = 1;
+while (i <= 10) {
+  if (i === 7) break;
+  console.log(i);
+  i++;
+}
+
+---
+
+# LEVEL 3: HARD — REAL-WORLD LOGIC
+
+12. Write a program that:
+
+    * Takes an array of numbers
+    * Prints all numbers
+    * Stops completely if a negative number is found
+let a =[1,33,4,5,-9,4,3];
+for(i=0;i<a.length;i++){
+  if(a[i]<0) break;
+  console.log(a[i]);
+}
+
+13. Write logic to:
+
+    * Loop through user input attempts
+    * Allow **maximum 3 attempts**
+    * Stop early if input is correct
+let inp = "Yes";
+let count =0;
+while(count<3){
+  let userInp = prompt("Enter your input");
+  if(userInp === inp) break;
+  count++;
+}
+
+14. Write a loop that:
+
+    * Skips invalid values (`null`, `undefined`)
+    * Prints only valid numbers
+const values = [10, null, 25, undefined, "30", 0, 42];
+
+for (let i = 0; i < values.length; i++) {
+    if (values[i] === null || values[i] === undefined) {
+        continue; // skip invalid values
+    }
+
+    if (typeof values[i] === "number") {
+        console.log(values[i]); // print only valid numbers
+    }
+}
+
+
+15. What will be the output?
+
+    ```js
+    let count = 0;
+
+    do {
+      console.log(count);
+      count++;
+    } while (count < 0);
+    ```
+0 will be the output.
+---
+
