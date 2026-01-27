@@ -21,3 +21,5 @@ b-02 - All about programming server.
 b-03 - API and postman.
 
 b-04 - Rest API(get , post , patch , delete , import & export).
+
+b-05 - Status code and basics of database.
