@@ -28,4 +28,4 @@ b-05 - Status code and basics of database.
 
 b-06 - All about database connection , mongoDb, mongoDb compass and mongooes.
 
-b-07 - 
+b-07 - Basic CRUD operations.
