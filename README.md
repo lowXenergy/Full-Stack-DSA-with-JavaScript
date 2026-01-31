@@ -31,3 +31,5 @@ b-05 - Status code and basics of database.
 b-06 - All about database connection , mongoDb, mongoDb compass and mongooes.
 
 b-07 - Basic CRUD operations.
+
+f-01 - Mouse follower using html , scss and JS.
