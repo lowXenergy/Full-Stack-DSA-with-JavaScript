@@ -1,6 +1,6 @@
 Learning Full Stack Web Development and dsa through Sheriyans Coding School (Cohort 2). This repository contains my practice work, projects, and DSA with JavaScript. It is a work in progress and updated as I continue learning. 
 
-File starting normally like 01 , 02 etc are html,css and vanila JS files, file starting from b like b-01 etc are backend files and file starting from f like f-01 are frontend files.
+File starting normally like 01 , 02 etc are html,css and vanila JS files, file starting from b like b-01 etc are backend files and file starting from f like f-01 are frontend files and file starting from d like d-01 are DSA files.
 
 01 - About me page : This small project is primarily built using HTML, with minimal use of CSS.
 
