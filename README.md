@@ -32,4 +32,8 @@ b-06 - All about database connection , mongoDb, mongoDb compass and mongooes.
 
 b-07 - Basic CRUD operations.
 
+d-01 - Js essential and operator questions.
+
+d-02 - Set questions.
+
 f-01 - Mouse follower using html , scss and JS.
