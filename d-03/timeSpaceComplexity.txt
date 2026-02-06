@@ -1,0 +1,31 @@
+// Binary Search Algorithm Complexity?
+Best case: O(1)
+Target found at the middle on the first comparison.
+
+Average case: O(log n)
+
+Worst case: O(log n)
+Search space is halved at each step.
+
+// What does Big O notation represent?
+Worst case time Complexity.
+
+//If an algorithm run in O(N) time, what does it mean?
+The algorithm runs in linear time.
+If an algorithm runs in O(N) time, it means:
+The running time grows linearly with the size of the input N.
+If the input size doubles, the execution time also roughly doubles.
+
+//What is the time complexity of this loop?
+for (let i = 0; i < n; i++) {
+    console.log(i);
+}
+O(n)
+
+//Which of the following is the fastest growing time complexity?
+O(n log n)
+O(n²)
+O(2ⁿ)
+O(log n)
+Ans
+O(2ⁿ),Exponential TC grows the fastest. It means the execution time doubles with every input, making it inefficient for large inputs.
