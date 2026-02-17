@@ -34,6 +34,8 @@ b-7 - Basic CRUD operations.
 
 b-08 - Fullstack.
 
+b-09 - Deployment.
+
 d-01 - Js essential and operator questions.
 
 d-02 - Set questions.
