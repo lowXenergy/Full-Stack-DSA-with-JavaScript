@@ -16,6 +16,8 @@ File starting normally like 01 , 02 etc are html,css and vanila JS files, file s
 
 07 -  A website is made using HTML and CSS and q&a based on loops.
 
+08 - Questions based on loops.
+
 b-00 - File for random stuff.
 
 b-01 - Backend basics.
@@ -41,3 +43,4 @@ d-01 - Js essential and operator questions.
 d-02 - Set questions.
 
 f-01 - Mouse follower using html , scss and JS.
+
