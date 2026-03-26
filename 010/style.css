@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+}
+
+.main {
+    background: rgb(219, 203, 203);
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#Head {
+    font-size: 90px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#Increment {
+    background: #4CAF50;
+    color: white;
+}
+
+#Decrement {
+    background: #ff4b5c;
+    color: white;
+}
+
+#Reset {
+    background: #2196F3;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+button:active {
+    transform: scale(0.98);
+}
