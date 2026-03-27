@@ -18,6 +18,10 @@ File starting normally like 01 , 02 etc are html,css and vanila JS files, file s
 
 08 - Questions based on loops.
 
+09 - Questions based on functions.
+
+110 - Basic counter app made with the help of basic dom and all the js basics.
+
 b-00 - File for random stuff.
 
 b-01 - Backend basics.
