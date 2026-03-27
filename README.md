@@ -20,7 +20,7 @@ File starting normally like 01 , 02 etc are html,css and vanila JS files, file s
 
 09 - Questions based on functions.
 
-110 - Basic counter app made with the help of basic dom and all the js basics.
+110(10) - Basic counter app made with the help of basic dom and all the js basics.
 
 b-00 - File for random stuff.
 
