@@ -34,9 +34,9 @@ b-04 - Rest API(get , post , patch , delete , import & export).
 
 b-05 - Status code and basics of database.
 
-b-06 - All about database connection , mongoDb, mongoDb compass and mongooes.
+b-07 - Basic CRUD operations.
 
-b-7 - Basic CRUD operations.
+b-06 - All about database connection , mongoDb, mongoDb compass and mongooes.
 
 b-08 - Fullstack.
 
