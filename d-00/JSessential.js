@@ -92,3 +92,9 @@ function calculateCompoundInterest(P, r, t, n) {
     // Return only the interest earned
     return (A - P).toFixed(2); 
 }
+
+//prompt-sync lets Node.js programs read user input synchronously from the command line.
+const prompt = require("prompt-sync")();
+
+let name = prompt("Enter your name: ");
+console.log("Hello " + name);
