@@ -42,9 +42,6 @@ b-08 - Fullstack.
 
 b-09 - Deployment.
 
-d-01 - Js essential and operator questions.
-
-d-02 - Set questions.
+d-00 - JS Essentials.
 
 f-01 - Mouse follower using html , scss and JS.
-
