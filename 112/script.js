@@ -15,3 +15,11 @@ const teams = [
     { team: 'LSG', primary: 'teal', secondary: 'orange' }
 ];
 
+button.addEventListener('click',()=>{
+console.log("hell");
+
+    let winner = teams[Math.floor(Math.random()*teams.length)]
+    h1.innerText = winner.team
+    h1.style.backgroundColor = winner.secondary
+    main.style.backgroundColor = winner.primary
+})
