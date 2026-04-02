@@ -1,0 +1,39 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Helvetica, sans-serif;
+}
+html, body{
+height: 100%;
+width: 100%;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+/* div{
+    height: 200px;
+    width: 200px;
+} */
+
+button{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: large;
+    border-radius: 45px;
+    position: relative;
+    z-index: 9;
+    cursor: pointer;
+}
+button:hover{
+    background-color: red;
+    scale:0.95;
+}

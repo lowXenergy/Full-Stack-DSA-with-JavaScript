@@ -24,7 +24,9 @@ File starting normally like 01 , 02 etc are html,css and vanila JS files, file s
 
 111(11) - Basic guess the number game.
 
-112(12) - 
+112(12) - IPL 2026 winner guessing game.
+
+113(13) - Click and generate random paper.
 
 b-00 - File for random stuff.
 
