@@ -1,0 +1,19 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: Helvetica, sans-serif;
+}
+html, body{
+height: 100%;
+width: 100%;
+cursor: none;
+}
+
+img{
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}

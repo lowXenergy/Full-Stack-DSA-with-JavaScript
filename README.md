@@ -20,13 +20,19 @@ File starting normally like 01 , 02 etc are html,css and vanila JS files, file s
 
 09 - Questions based on functions.
 
-110(10) - Basic counter app made with the help of basic dom and all the js basics.
+110(10) - Basic counter app made with the help of basic dom and all the js basics. (DOM)
 
-111(11) - Basic guess the number game.
+111(11) - Basic guess the number game. (DOM)
 
-112(12) - IPL 2026 winner guessing game.
+112(12) - IPL 2026 winner guessing game. (DOM)
 
-113(13) - Click and generate random paper.
+113(13) - Click and generate random paper. (DOM)
+
+114(14) - setTimeout, download effect. (DOM)
+
+115(15) - Cursor. (DOM)
+
+116(16) - Card. (DOM)
 
 b-00 - File for random stuff.
 
