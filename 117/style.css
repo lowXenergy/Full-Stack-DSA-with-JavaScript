@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+}
+
+.piano {
+  position: relative;
+  display: flex;
+}
+
+/* White Keys */
+.white-key {
+  width: 80px;
+  height: 300px;
+  background: white;
+  border: 1px solid black;
+  border-radius: 0 0 6px 6px;
+  box-sizing: border-box;
+}
+
+.white-key:active {
+  background: #ddd;
+}
+
+/* Black Keys */
+.black-key {
+  position: absolute;
+  width: 50px;
+  height: 180px;
+  background: black;
+  border-radius: 0 0 4px 4px;
+  z-index: 2;
+}
+
+.black-key:active {
+  background: #444;
+}
+
+/* Active White Key */
+.white-key.active {
+  background: #ddd;
+  transform: translateY(4px);
+  box-shadow: inset 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Active Black Key */
+.black-key.active {
+  background: #444;
+  transform: translateY(4px);
+}
+
+.piano {
+  position: relative;
+  display: flex;
+}
+
+.white-key {
+  width: 60px;
+  height: 300px;
+  background: white;
+  border: 1px solid black;
+}
+
+.black-key {
+  width: 40px;
+  height: 180px;
+  background: black;
+  position: absolute;
+  z-index: 2;
+}
