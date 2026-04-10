@@ -1,11 +1,17 @@
-let prompt= require('prompt-sync')()
-let start = Number(prompt("Enter the start "))
-let end = Number(prompt("Enter the end "));
-if(start>end)[start,end]=[end,start];
-let evenSum=0,oddSum=0;
-for(let i = start;i<=end;i++){
-    if(i%2===0)evenSum+=i;
-    else oddSum +=i;
+function prime_factors(n) {
+    if (n <= 1) return "No prime factors";
+
+    let factors = [];
+
+    for (let i = 2; i <= n; i++) {
+        while (n % i === 0) {
+            factors.push(i.toString());
+            n = Math.floor(n / i);
+        }
+    }
+
+    return factors.join("\n");
 }
-console.log(`Even Sum is ${evenSum}
-Odd Sum is ${oddSum}`);
+
+// Example
+console.log(prime_factors(60));
