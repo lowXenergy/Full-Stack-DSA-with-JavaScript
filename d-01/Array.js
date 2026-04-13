@@ -99,3 +99,75 @@ function findSecondGreatestElement(arr) {
 // }
 
 // x is 50
+
+// Copy and reverse the array
+function copyAndReverseArray(arr) {
+    // Write your logic here
+    let reverse=[];
+    let j=0;
+    for(i=arr.length-1;i>=0;i--){
+        reverse[j]=arr[i];
+        j++;
+    }
+    return reverse;
+}
+
+// Array left rotate by 1
+function leftRotateByOne(arr) {
+    // No need to rotate if array has 0 or 1 element
+    if (arr.length < 2) return; 
+
+    let firstElement = arr[0];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+         // Shift elements left
+        arr[i] = arr[i + 1];
+    }
+    
+    // Move first element to last position
+    arr[arr.length - 1] = firstElement; 
+}
+
+// Move Zero tp the end
+
+function moveZerosToEnd(arr) {
+    let n = arr.length;
+    // Declare a new array of size 'n'
+    let res = new Array(n); 
+    
+    // Two pointers: 'i' for non-zero elements, 'j' for zeros
+    let i = 0, j = n - 1; 
+    
+    // Iterate through the original array
+    for (let k = 0; k < n; k++) { 
+        if (arr[k] > 0) { // if (arr[k] !== 0) 
+            // Place non-zero elements at the beginning
+            res[i++] = arr[k]; // post increment Assign arr[k] to res[i] then increment i
+// res[i] = arr[k];
+// i = i + 1;
+        } else {
+            // Place zeros at the end
+            res[j--] = arr[k]; // post increment 
+        }
+    }
+    // Return the modified array
+    return res; 
+}
+
+
+function moveZerosInPlace(arr) {
+    // 'i' scans the array, 'j' tracks position for non-zero elements
+    let i = 0, j = 0; 
+    let n = arr.length;
+
+    while (i < n) {
+        // If current element is zero, just move 'i' forward
+        if (arr[i] === 0) i++;
+        else {
+            // Swap non-zero element at 'i' with the zero at 'j'
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+            j++; // Move 'j' forward to the next position for non-zero elements
+            i++; // Continue scanning the array
+        }
+    }
+}
