@@ -171,3 +171,21 @@ function moveZerosInPlace(arr) {
         }
     }
 }
+
+// Absolute Diffrence
+// helper.js (template)
+//   sumOfAbsDiff(arr) {
+    // Write your code here
+    let sum = 0n;
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = i + 1; j < arr.length; j++) {
+    let diff = arr[i] - arr[j];
+    if (diff < 0n) diff = -diff;
+    sum += diff;
+  }
+}
+
+return sum;
+//   }
+
