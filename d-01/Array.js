@@ -189,3 +189,50 @@ for (let i = 0; i < arr.length; i++) {
 return sum;
 //   }
 
+// https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array/
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var getSumAbsoluteDifferences = function(nums) {
+    let result = [];
+    for(let i=0;i<nums.length;i++){
+        let sum =0;
+        for(let j=0;j<nums.length;j++){
+            let diff = nums[i]-nums[j];
+            if(diff<0) diff = -diff;
+            sum += diff;
+            console.log(sum);
+            
+        }
+        result[i] = sum;
+    }
+    console.log(result);
+    
+};
+
+getSumAbsoluteDifferences([2,3,5]) // It is correct but it will give you Time Limit Exceeded
+
+var getSumAbsoluteDifferences = function(nums) {
+    let n = nums.length;
+    let result = new Array(n);
+
+    let totalSum = 0;
+    for (let num of nums) totalSum += num;
+
+    let leftSum = 0;
+
+    for (let i = 0; i < n; i++) {
+        let rightSum = totalSum - leftSum - nums[i];
+
+        let leftPart = nums[i] * i - leftSum;
+        let rightPart = rightSum - nums[i] * (n - i - 1);
+
+        result[i] = leftPart + rightPart;
+
+        leftSum += nums[i];
+    }
+
+    return result;
+};
