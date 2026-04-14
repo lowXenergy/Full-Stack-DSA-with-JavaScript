@@ -212,7 +212,9 @@ var getSumAbsoluteDifferences = function(nums) {
     
 };
 
-getSumAbsoluteDifferences([2,3,5]) // It is correct but it will give you Time Limit Exceeded
+getSumAbsoluteDifferences([2,3,5]) // It is correct but it will give you Time Limit Exceeded 
+
+// Used when the array is already sorted
 
 var getSumAbsoluteDifferences = function(nums) {
     let n = nums.length;
@@ -236,3 +238,78 @@ var getSumAbsoluteDifferences = function(nums) {
 
     return result;
 };
+
+// Multiplication of previous and next element
+
+function multiplyPrevNext(arr) {
+    let n = arr.length;
+    let result = new Array(n);
+    result[0] = arr[0]*arr[1];
+    result[n-1]=arr[n-1]*arr[n-2];
+    for(let i =1;i<n-1;i++){
+        result[i]=arr[i-1]*arr[i+1]
+    }
+    return result;
+}
+
+console.log(multiplyPrevNext([2,3,4]));
+
+// Minimum value to add for a balance array
+
+function minAddForBalance(arr){
+    let n = arr.length;
+    let mid = n/2;
+    let leftSum = 0;
+    let rightSum = 0;
+    for(let i =0 ; i<mid;i++){
+        leftSum += arr[i]
+    }
+
+    for(let i =mid;i<n;i++){
+        rightSum+=arr[i]
+    }
+    if(leftSum===rightSum)console.log("No need to add anything...");
+    else if(leftSum>rightSum) console.log("Value to be added on right side is ",leftSum-rightSum);
+    else console.log("Value to be added on left side is ",rightSum-leftSum);
+}
+
+minAddForBalance([1,2,1,2,1,3])
+
+// sort first half ascending and second half descending
+
+// brute O(n²)
+function sortHalf(arr) {
+    let n = arr.length;
+    let mid = Math.floor((n + 1) / 2);
+
+    // sort first half ascending (bubble sort)
+    for (let i = 0; i < mid; i++) {
+        for (let j = 0; j < mid - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+
+    // sort second half descending (bubble sort)
+    for (let i = mid; i < n; i++) {
+        for (let j = mid; j < n - (i - mid) - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+            }
+        }
+    }
+
+    return arr;
+}
+
+// Better O(n log n)
+function sortHalf(arr) {
+    let n = arr.length;
+    let mid = Math.floor((n + 1) / 2);
+
+    let firstHalf = arr.slice(0, mid).sort((a, b) => a - b);
+    let secondHalf = arr.slice(mid).sort((a, b) => b - a);
+
+    return [...firstHalf, ...secondHalf];
+}

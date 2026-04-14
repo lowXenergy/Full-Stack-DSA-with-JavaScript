@@ -1,18 +1,18 @@
-var getSumAbsoluteDifferences = function(nums) {
-    let result = [];
-    for(let i=0;i<nums.length;i++){
-        let sum =0;
-        for(let j=0;j<nums.length;j++){
-            let diff = nums[i]-nums[j];
-            if(diff<0) diff = -diff;
-            sum += diff;
-            console.log(sum);
-            
-        }
-        result[i] = sum;
+function minAddForBalance(arr){
+    let n = arr.length;
+    let mid = n/2;
+    let leftSum = 0;
+    let rightSum = 0;
+    for(let i =0 ; i<mid;i++){
+        leftSum += arr[i]
     }
-    console.log(result);
-    
-};
 
-getSumAbsoluteDifferences([2,3,5])
+    for(let i =mid;i<n;i++){
+        rightSum+=arr[i]
+    }
+    if(leftSum===rightSum)console.log("No need to add anything...");
+    else if(leftSum>rightSum) console.log("Value to be added on right side is ",leftSum-rightSum);
+    else console.log("Value to be added on left side is ",rightSum-leftSum);
+}
+
+minAddForBalance([1,2,1,2,1,3])
