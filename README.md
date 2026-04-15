@@ -58,4 +58,10 @@ b-09 - Deployment.
 
 d-00 - JS Essentials.
 
+d-01 - Array.
+
+d-02 - Searching Algorithms.
+
+d-03 - Sorting Algorithms.(Bubble , insertion , selection)
+
 f-01 - Mouse follower using html , scss and JS.
