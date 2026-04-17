@@ -36,6 +36,8 @@ File starting normally like 01 , 02 etc are html,css and vanila JS files, file s
 
 117(17) - Virtual piano (DOM)
 
+118(18) - Mouse follower using html , scss and JS.
+
 b-00 - File for random stuff.
 
 b-01 - Backend basics.
@@ -64,4 +66,7 @@ d-02 - Searching Algorithms.
 
 d-03 - Sorting Algorithms.(Bubble , insertion , selection)
 
-f-01 - Mouse follower using html , scss and JS.
+d-4 - String
+
+
+f-00 - Simple page using react.

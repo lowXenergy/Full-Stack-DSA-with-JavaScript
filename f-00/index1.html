@@ -1,0 +1,157 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>macOS Top Bar</title>
+
+<style>
+body {
+  background: #0f1115;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.bar {
+  width: 950px;
+  height: 52px;
+  background: #1e1f24;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  gap: 14px;
+}
+
+/* mac buttons */
+.controls {
+  display: flex;
+  gap: 8px;
+}
+.controls div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.red { background:#ff5f57; }
+.yellow { background:#febc2e; }
+.green { background:#28c840; }
+
+/* icons */
+.icon {
+  width: 18px;
+  height: 18px;
+  fill: #c7c7c7;
+  opacity: 0.85;
+  cursor: pointer;
+}
+.icon:hover {
+  opacity: 1;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+}
+
+.url {
+  flex: 1;
+  height: 34px;
+  background: #2a2c31;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 8px;
+}
+
+.url span {
+  color: #d1d1d1;
+  font-size: 14px;
+}
+
+/* right side */
+.right {
+  display: flex;
+  gap: 16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="bar">
+
+  <!-- mac buttons -->
+  <div class="controls">
+    <div class="red"></div>
+    <div class="yellow"></div>
+    <div class="green"></div>
+  </div>
+
+  <!-- back / forward -->
+  <div class="nav">
+    <!-- back -->
+    <svg class="icon" viewBox="0 0 24 24">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+
+    <!-- forward -->
+    <svg class="icon" viewBox="0 0 24 24">
+      <path d="M9 6l6 6-6 6"/>
+    </svg>
+  </div>
+
+  <!-- shield -->
+  <svg class="icon" viewBox="0 0 24 24">
+    <path d="M12 2l7 4v6c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-4z"/>
+  </svg>
+
+  <!-- URL -->
+  <div class="url">
+    <!-- lock -->
+    <svg class="icon" viewBox="0 0 24 24">
+      <path d="M17 9h-1V7a4 4 0 10-8 0v2H7a2 2 0 00-2 2v8h14v-8a2 2 0 00-2-2zm-6 0V7a2 2 0 114 0v2h-4z"/>
+    </svg>
+    <span>www.wolpxel.agency</span>
+  </div>
+
+  <!-- refresh -->
+  <svg class="icon" viewBox="0 0 24 24">
+    <path d="M17.65 6.35A8 8 0 104 12h2a6 6 0 116-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+  </svg>
+
+  <!-- right icons -->
+  <div class="right">
+
+    <!-- download -->
+    <svg class="icon" viewBox="0 0 24 24">
+      <path d="M12 3v10m0 0l-4-4m4 4l4-4M5 21h14"/>
+    </svg>
+
+    <!-- share -->
+    <svg class="icon" viewBox="0 0 24 24">
+      <path d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7M16 6l-4-4-4 4M12 2v14"/>
+    </svg>
+
+    <!-- plus -->
+    <svg class="icon" viewBox="0 0 24 24">
+      <path d="M12 5v14M5 12h14"/>
+    </svg>
+
+    <!-- tabs -->
+    <svg class="icon" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="14" height="14" rx="2"/>
+      <path d="M7 3h14v14"/>
+    </svg>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+```
