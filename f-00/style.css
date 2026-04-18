@@ -8,6 +8,8 @@ html,
 body {
     height: 100%;
     width: 100%;
+     overflow: hidden;
+    /* padding: 50px; */
 }
 
 #top{
@@ -34,3 +36,190 @@ body {
 .red { background:#ff5f57; }
 .yellow { background:#febc2e; }
 .green { background:#28c840; }
+
+.nav {
+  display: flex;
+  gap: 10px;
+  padding-right: 10px;
+}
+
+.icon {
+  width: 18px;
+  height: 28px;
+  fill: #c7c7c7;
+  opacity: 0.5;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.icon:hover {
+  opacity: 1;
+}
+
+.url {
+  flex: 1;
+  height: 34px;
+  background: #2a2c31;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  /* gap: 8px; */
+}
+
+.url span {
+  color: #d1d1d1;
+  font-size: 14px;
+}
+
+.address-bar{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 40px;
+  background: #FCFCFC;
+}
+
+/* Logo */
+.logo{
+  height: 28px;
+}
+
+
+/* Center links */
+#navbar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+}
+
+/* Right CTA */
+.cta a {
+  text-decoration: none;
+  color: #111;
+  font-size: 15px;
+  border-bottom: 1px solid #111;
+  padding-bottom: 2px;
+}
+
+.hero {
+  display: flex;
+  height: 100vh;
+  background: #FCFCFC;
+}
+
+/* LEFT */
+.left {
+  flex: 1;
+  display: flex;
+  padding: 40px;
+  gap: 80px;
+}
+
+/* Vertical section */
+.vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 40px;
+  color: #888;
+  font-size: 12px;
+  gap: 10px;
+}
+
+.vertical span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.vertical .line {
+  width: 1px;
+  height: 360px;
+  background: #ccc;
+  /* margin: 20px 0; */
+}
+
+.vertical .year {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* Main content */
+.content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.stats h2 {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.stats p {
+  font-size: 11px;
+  color: #777;
+  font-weight: 300;
+}
+
+/* Hello text */
+h1 {
+  font-size: 120px;
+  font-weight: 300;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 180px;
+}
+
+/* Scroll */
+.scroll {
+  font-size: 14px;
+  color: #777;
+}
+
+/* RIGHT */
+.right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FCFCFC;
+}
+
+.right img {
+  height: 90%;
+  width: 100%;
+  object-fit: cover;
+  /* filter: grayscale(100%); */
+  /* background-color: #FCFCFC; */
+}
