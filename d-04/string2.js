@@ -292,3 +292,53 @@ class Solution {
     return true;
   }
 }
+
+// Largest 3 same digit number in string 
+// Leetcode: https://leetcode.com/problems/remove-digit-from-number-to-maximize-result/description/
+
+largestGoodInteger(num){
+    // Write your code here
+    let sorted = num
+  .split("")              // ["6","7","7","7","1","3","3","3","3","9"]
+  .sort((a, b) => a - b)  // numeric sort
+  .join("");
+  let triple ="";
+  for(let i =0;i<num.length;i++){
+    if (sorted[i] === sorted[i + 1] && sorted[i] === sorted[i + 2]) {
+    triple = sorted[i] + sorted[i + 1] + sorted[i + 2];
+  }
+    
+  }
+  return triple;
+}
+
+// Remove digit From number to Maximize result
+
+// Brute
+var removeDigit = function(number, digit) {
+    let max = "";
+
+    for (let i = 0; i < number.length; i++) {
+        if (number[i] === digit) {
+            let candidate = number.slice(0, i) + number.slice(i + 1);
+            if (candidate > max) {
+                max = candidate;
+            }
+        }
+    }
+
+    return max;
+};
+
+//Optimal
+var removeDigit = function(number, digit) {
+    for (let i = 0; i < number.length - 1; i++) {
+        if (number[i] === digit && number[i] < number[i + 1]) {
+            return number.slice(0, i) + number.slice(i + 1);
+        }
+    }
+
+    // fallback: remove last occurrence
+    let lastIndex = number.lastIndexOf(digit);
+    return number.slice(0, lastIndex) + number.slice(lastIndex + 1);
+};
