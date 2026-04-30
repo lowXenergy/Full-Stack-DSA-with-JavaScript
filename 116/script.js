@@ -6,7 +6,7 @@ const cards = [
     icon:"🐻",
     price:"0.5 ETH",
     code:"HAPE #67",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=Hape1",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=Hape1&backgroundColor=b6e3f4",
     user_name:"HAPE PRIME",
     earning:"$5/h",
     distribution:"80 | 20"
@@ -17,7 +17,7 @@ const cards = [
     icon:"🐵",
     price:"1.2 ETH",
     code:"HAPE #102",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=Crypto2",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=Crypto2&backgroundColor=b6e3f4",
     user_name:"CryptoKing",
     earning:"$8/h",
     distribution:"70 | 30"
@@ -28,7 +28,7 @@ const cards = [
     icon:"🐶",
     price:"0.3 ETH",
     code:"HAPE #203",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=NFT3",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=NFT3&backgroundColor=b6e3f4",
     user_name:"NFTQueen",
     earning:"$3/h",
     distribution:"85 | 15"
@@ -39,7 +39,7 @@ const cards = [
     icon:"🦁",
     price:"3.8 ETH",
     code:"HAPE #11",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=Lion4",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=Lion4&backgroundColor=b6e3f4",
     user_name:"LionDAO",
     earning:"$15/h",
     distribution:"60 | 40"
@@ -50,7 +50,7 @@ const cards = [
     icon:"🐸",
     price:"0.7 ETH",
     code:"HAPE #89",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=Frog5",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=Frog5&backgroundColor=b6e3f4",
     user_name:"FrogLabs",
     earning:"$6/h",
     distribution:"75 | 25"
@@ -61,7 +61,7 @@ const cards = [
     icon:"🐼",
     price:"1.5 ETH",
     code:"HAPE #150",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=Panda6",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=Panda6&backgroundColor=b6e3f4",
     user_name:"PandaX",
     earning:"$9/h",
     distribution:"65 | 35"
@@ -72,7 +72,7 @@ const cards = [
     icon:"🦊",
     price:"2.1 ETH",
     code:"HAPE #77",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=Fox8",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=Fox8&backgroundColor=b6e3f4",
     user_name:"FoxChain",
     earning:"$11/h",
     distribution:"68 | 32"
@@ -83,12 +83,13 @@ const cards = [
     icon:"🐉",
     price:"4.5 ETH",
     code:"HAPE #1",
-    profile_img:"https://api.dicebear.com/7.x/adventurer/svg?seed=Dragon9",
+    profile_img:"https://api.dicebear.com/7.x/bottts/svg?seed=Dragon9&backgroundColor=b6e3f4",
     user_name:"DragonLabs",
     earning:"$20/h",
     distribution:"50 | 50"
   }
 ];
+
 let sum = '';
 
 cards.forEach(function(e){
@@ -109,8 +110,6 @@ cards.forEach(function(e){
             </div>
         </div>
 
-
-
         <div class="bottom">
             <div class="first">
             <p>Average earnings</p>
@@ -121,7 +120,6 @@ cards.forEach(function(e){
             <p>Distribution%</p>
             <p>${e.distribution}</p>
             </div>
-            
         </div>
     </div>`
 })

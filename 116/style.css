@@ -59,7 +59,8 @@ body{
   top: -8px;
   left: 50%;
   transform: translateX(-50%);
-  background: #2f5fd0;
+  /* background: #2f5fd0; */
+  background: black;
   color: white;
   padding: 15px 15px 10px 15px;
   border-radius: 10px;
@@ -72,7 +73,8 @@ body{
   position: absolute;
   top: 100px;
   right: -8px;
-  background: #2f5fd0;
+  /* background: #2f5fd0; */
+  background: black;
   padding: 8px;
   border-radius: 10px;
   font-size: 30px;
