@@ -11,6 +11,9 @@ width: 100%;
 body{
     overflow: hidden;
     background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

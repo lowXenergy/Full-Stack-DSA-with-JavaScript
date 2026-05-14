@@ -4,10 +4,10 @@ let main = document.querySelector('main')
 
 const teams = [
     { team: 'CSK', primary: 'yellow', secondary: 'blue' },
-    { team: 'RCB', primary: 'red', secondary: 'black' },
+    { team: 'RCB', primary: 'red', secondary: 'grey' },
     { team: 'MI', primary: 'blue', secondary: 'gold' },
     { team: 'KKR', primary: 'purple', secondary: 'gold' },
-    { team: 'SRH', primary: 'orange', secondary: 'black' },
+    { team: 'SRH', primary: 'orange', secondary: 'pink' },
     { team: 'DC', primary: 'blue', secondary: 'red' },
     { team: 'PBKS', primary: 'red', secondary: 'silver' },
     { team: 'RR', primary: 'pink', secondary: 'blue' },
