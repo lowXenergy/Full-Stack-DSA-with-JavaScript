@@ -25,7 +25,7 @@ app.post("/notes",async(req,res)=>{
 // const title = req.body.title
 // const description = req.body.description
 
-      const note = await noteModel.create({
+    const note = await noteModel.create({
 // This does three operations internally:
 // Creates a new document object
 // Validates it against the schema
@@ -72,7 +72,7 @@ module.exports = app;
 // req → request  (data coming from client to server)
 // res → response (data going from server back to client)
 // You use async and await in your Express route because database operations in Node.js and Mongoose are asynchronous. That means they do not complete immediately and instead return a Promise.
-//Without async/await:
+// Without async/await:
 // Node starts DB operation → immediately continues → sends wrong response
 // With async/await:
 // Node starts DB operation → waits → sends correct response

@@ -38,6 +38,8 @@ File starting normally like 01 , 02 etc are html,css and vanila JS files, file s
 
 118(18) - Mouse follower using html , scss and JS.
 
+119(19) - Made reel section using JS.
+
 b-00 - File for random stuff.
 
 b-01 - Backend basics.

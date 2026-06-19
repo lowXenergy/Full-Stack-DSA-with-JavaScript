@@ -193,11 +193,13 @@ allReels.addEventListener('click', function (dets) {
     addData()
   }
 
- if (dets.target.className == 'mute') {
-    if (!reels[dets.target.id].ismuted) {
-      reels[dets.target.id].ismuted = true
+ if (dets.target.classList.contains('mute') || dets.target.closest('.mute')) {
+    const muteBtn = dets.target.classList.contains('mute') ? dets.target : dets.target.closest('.mute')
+    const idx = muteBtn.id
+    if (!reels[idx].ismuted) {
+      reels[idx].ismuted = true
     } else {
-      reels[dets.target.id].ismuted = false
+      reels[idx].ismuted = false
     }
     addData()
   }

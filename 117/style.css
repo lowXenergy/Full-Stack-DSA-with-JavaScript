@@ -1,113 +1,106 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  overflow: hidden;
+body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg,#111,#222);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
 }
 
-.top-section {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 14px;
+.container{
+    text-align: center;
 }
 
-.piano-container {
-  width: 100%;
-  background: #000;
-  padding: 15px;
-  border-top: 1px solid #333;
-  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.8);
+.container h1{
+    color: white;
+    margin-bottom: 40px;
+    font-size: 50px;
+    letter-spacing: 3px;
 }
 
-.piano {
-  position: relative;
-  display: flex;
-  gap: 0;
-  justify-content: center;
-  margin: 0 auto;
+.piano{
+    position: relative;
+    display: flex;
+    padding: 20px;
+    background: #181818;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
-.white-key {
-  width: 50px;
-  height: 200px;
-  background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 50%, #f0f0f0 100%);
-  border: 1px solid #999;
-  border-bottom: 2px solid #666;
-  border-radius: 0 0 4px 4px;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 6px;
-  transition: all 0.08s ease;
-  font-size: 10px;
-  color: #333;
-  font-weight: 500;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  position: relative;
-  margin-right: -1px;
+/* COMMON KEY STYLE */
+.key{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.1s;
+    font-weight: bold;
 }
 
-.white-key:hover {
-  background: linear-gradient(to bottom, #f5f5f5 0%, #efefef 50%, #e8e8e8 100%);
+/* WHITE KEYS */
+.white{
+    width: 90px;
+    height: 420px;
+    background: white;
+    border: 2px solid #000;
+    border-radius: 0 0 12px 12px;
+    color: #000;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-right: -2px;
+    z-index: 1;
 }
 
-.white-key.active {
-  background: linear-gradient(to bottom, #d9d9d9 0%, #d0d0d0 50%, #c8c8c8 100%);
-  transform: translateY(2px);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+.white:hover{
+    background: #f1f1f1;
 }
 
-.black-key {
-  position: absolute;
-  width: 32px;
-  height: 130px;
-  background: linear-gradient(to bottom, #1a1a1a 0%, #000 100%);
-  border: 1px solid #000;
-  border-bottom: 2px solid #222;
-  border-radius: 0 0 3px 3px;
-  cursor: pointer;
-  user-select: none;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 4px;
-  z-index: 10;
-  transition: all 0.08s ease;
-  font-size: 9px;
-  color: #777;
-  font-weight: 500;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 2px 4px rgba(0, 0, 0, 0.8);
+.white:active{
+    background: #ddd;
+    transform: translateY(4px);
 }
 
-.black-key:hover {
-  background: linear-gradient(to bottom, #2a2a2a 0%, #0a0a0a 100%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 6px rgba(0, 0, 0, 0.9);
+/* BLACK KEYS */
+.black{
+    position: absolute;
+    width: 60px;
+    height: 260px;
+    background: linear-gradient(to bottom,#333,#000);
+    border-radius: 0 0 10px 10px;
+    color: white;
+    z-index: 2;
+    font-size: 16px;
+    padding-bottom: 15px;
 }
 
-.black-key.active {
-  background: linear-gradient(to bottom, #000 0%, #1a1a1a 100%);
-  transform: translateY(1px);
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.9);
+.black:hover{
+    background: linear-gradient(to bottom,#555,#111);
 }
 
-.instructions {
-  color: #666;
-  font-size: 13px;
-  padding: 10px;
-  text-align: center;
+.black:active{
+    transform: translateY(4px);
 }
 
+/* BLACK KEY POSITIONS */
+.black1{ left: 80px; }
+.black2{ left: 170px; }
+
+.black3{ left: 350px; }
+.black4{ left: 440px; }
+.black5{ left: 530px; }
+
+.black6{ left: 800px; }
+.black7{ left: 890px; }
+
+.black8{ left: 1070px; }
+.black9{ left: 1160px; }
+.black10{ left: 1250px; }
