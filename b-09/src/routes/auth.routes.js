@@ -10,9 +10,9 @@ authRouter.post("/register",async(req,res)=>{
     const isUserAlreadyExist=await userModel.findOne({email})
 
     if(isUserAlreadyExist){
-        return res.status(400).json({
+        return res.status(409).json({
             message:"email already exist"
-        })//400 or 409
+        })//The request is valid, but it conflicts with existing data (e.g., duplicate email, duplicate username, duplicate order ID).
     }
 
     const user = await userModel.create({

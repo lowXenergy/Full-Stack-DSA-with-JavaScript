@@ -58,7 +58,9 @@ b-07 - Basic CRUD operations.
 
 b-08 - Fullstack.
 
-b-09 - Deployment.
+b-09 - JWT.
+
+b-10 - bcrypt js.
 
 d-00 - JS Essentials.
 
