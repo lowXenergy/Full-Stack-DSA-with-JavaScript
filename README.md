@@ -62,6 +62,8 @@ b-09 - JWT.
 
 b-10 - bcrypt js.
 
+b-11 - Authentication.
+
 d-00 - JS Essentials.
 
 d-01 - Array.
