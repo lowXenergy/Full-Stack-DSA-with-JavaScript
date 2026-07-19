@@ -45,13 +45,13 @@ authRouter.get('/get-me',async (req,res) => {
     
     const token = req.cookies.token
 
-    const decoded = jwt.verify(token,process.env.JWT_SECRET)
+    const decoded = jwt.verify(token,process.env.JWT_SECRET)//To know weather this token is created by our server or not.
 
     console.log(decoded)
 
-     const user = await userModel.findById(decoded.id)
+    const user = await userModel.findById(decoded.id)
 
-     res.json({
+    res.json({
         name:user.name,
         email:user.email
      })
