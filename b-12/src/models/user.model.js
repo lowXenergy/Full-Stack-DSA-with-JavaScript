@@ -19,7 +19,8 @@ const userSchema = new mongoose.Schema({
     profile_img:{
         type:String,
         default:"https://ik.imagekit.io/rg5md0acx/default-avatar-profile-social-media-260nw-1920331226.webp"
-    } 
+    },
+    
 })
 
 const userModel = mongoose.model("users",userSchema);
