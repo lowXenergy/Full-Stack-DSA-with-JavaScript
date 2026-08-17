@@ -12,7 +12,7 @@ const imagekit = Imagekit({
 
 
 async function createPostController(req,res){
-    console.log(req.body,req.file);
+    // console.log(req.body,req.file);
 
     const file= await imagekit.files.upload({
         file:await toFile(Buffer.from(req.file.buffer), req.file.originalname),
