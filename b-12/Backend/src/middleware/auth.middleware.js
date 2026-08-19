@@ -21,7 +21,7 @@ async function identifyUser(req,res,next){
         })
     }
 
-    req.user = decoded
+    req.user = decoded // we have created a new property it does't exit before hand
 
     next()//forward the req
 

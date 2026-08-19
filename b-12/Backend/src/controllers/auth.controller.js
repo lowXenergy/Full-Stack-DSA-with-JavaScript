@@ -1,5 +1,5 @@
 const userModel = require("../models/user.model");
-// const crypto = require("crypto");// VEry low level package
+// const crypto = require("crypto");// Very low level package
 const bcrypt = require("bcryptjs");// For advacne security
 const jwt = require("jsonwebtoken");
 
@@ -50,7 +50,8 @@ async function registerController(req,res){
 
     const token = jwt.sign({
         // User data , unique data
-        id:user._id
+        id:user._id,
+        username:user.username
     },
     process.env.JWT_SECRET,
     {expiresIn:"1d"}
@@ -71,9 +72,14 @@ async function registerController(req,res){
 
 }
 
-
+//Currectly we can login with email being of differnt user and username of being diffrent user. The only thing that should be same is password.
 async function loginController (req,res){
     const {username,email,password} = req.body
+//     const { userNameOrEmail, password } = req.body;
+
+// console.log("userNameOrEmail", userNameOrEmail);
+// console.log("password:", password);
+// console.log("body:", req.body);
 
     const user = await userModel.findOne({
         $or:[
@@ -86,6 +92,15 @@ async function loginController (req,res){
             }
         ]
     })
+
+
+
+// const user = await userModel.findOne({
+//     $or: [
+//         { username: userNameOrEmail },
+//         { email: userNameOrEmail }
+//     ]
+// });
 
     if(!user){
         return res.status(404).json({
@@ -107,7 +122,8 @@ async function loginController (req,res){
 
     const token = jwt.sign(
         {
-            id:user._id
+            id:user._id,
+            username:user.username 
         },
         process.env.JWT_SECRET,
         {expiresIn:"1d"}
