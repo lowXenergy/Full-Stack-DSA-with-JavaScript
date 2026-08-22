@@ -3,25 +3,42 @@ import "../style/form.scss"
 import { Link } from 'react-router' 
 import { useState } from 'react'
 import axios from 'axios'
+import { useAuth } from '../hooks/useAuth'
+import {useNavigate} from 'react-router'
 
 const Login = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
 
+    const {handleLogin,loading}=useAuth()
+    const navigate = useNavigate()
+
+    if(loading){
+        return (
+            <h1>Loading...</h1>
+        )
+    }
+
     function handleSubmit(e) {
         e.preventDefault()
-        
-        axios.post("http://localhost:3000/api/auth/login",{
-            username,
-            password
-        },{
-            withCredentials:true
+
+        handleLogin(username,password) 
+        .then(res=>{
+            console.log(res)
+            navigate("/")
         })
-        .then(
-            res=>{
-                console.log(res.data)
-            }
-        )
+        
+        // axios.post("http://localhost:3000/api/auth/login",{//UI LAYER NEVER DIRECTLY COMMUNICATE WITH BACKEND
+        //     username,
+        //     password
+        // },{
+        //     withCredentials:true
+        // })
+        // .then(
+        //     res=>{
+        //         console.log(res.data)
+        //     }
+        // )
     }
   return (
      <main>

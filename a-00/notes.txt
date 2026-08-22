@@ -1,0 +1,18 @@
+Animation -> 
+fav Animation?
+no animation s/w -> how we used to do animation -> Drawing by hands (like 60fps)
+
+In our website we want to use 60fps animation.
+
+4 main things in animation:
+    1. Starting point
+    2. Ending point
+    3. Duration of your animation
+    4. Easing(imp)
+    5. Path of the animation (by tutor). a-> sp , b-> ep how many ways to go from a to b? infinite
+
+Web animation   
+    1. Css animation -> limited
+    2. Js animation -> More line of codes + manual optimization.
+
+Solution -> Any animation library eg gsap

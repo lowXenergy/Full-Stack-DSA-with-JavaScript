@@ -13,16 +13,18 @@ const register = () => {
     async function handleSubmit(e) {
         e.preventDefault()
 
-        axios.post("http://localhost:3000/api/auth/register",{
-            username,
-            email,
-            password
-        },{
-            withCredentials:true
-        })
-        .then(res=>{
-            console.log(res.data)
-        })
+        // axios.post("http://localhost:3000/api/auth/register",{//UI LAYER NEVER DIRECTLY COMMUNICATE WITH BACKEND
+        //     username,
+        //     email,
+        //     password
+        // },{
+        //     withCredentials:true
+        // })
+        // .then(res=>{
+        //     console.log(res.data)
+        // })
+
+        
     }
 
   return (

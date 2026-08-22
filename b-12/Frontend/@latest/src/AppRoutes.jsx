@@ -6,6 +6,7 @@ function AppRoutes(){
     return (
     <BrowserRouter >
     <Routes>
+        <Route path="/" element={<h1>Welcome to the app</h1>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
     </Routes>
@@ -14,6 +15,8 @@ function AppRoutes(){
 }
 
 export default AppRoutes
+
+
 // export const routes = BrowserRouter([
 //     {
 //         path:'/login',
@@ -24,3 +27,5 @@ export default AppRoutes
 //         element:(<RegistrationForm/>)
 //     }
 // ])
+
+// UI + COMPONENT PAGE = UI LAYER
