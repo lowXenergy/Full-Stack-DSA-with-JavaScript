@@ -1,23 +1,27 @@
-const express = require("express");
-const app = express();
-app.use(express.json());//Data pd ke de de ga only if data raw format mai hua to
-const cookieParser = require("cookie-parser");
+const express = require('express');
+const cookieParser = require("cookie-parser")
 const cors = require("cors")
+const morgan = require("morgan")
 
-app.use(cors({
-    credentials:true,
-    origin:"http://localhost:5173"
-}))
+
+const app = express();
+app.use(express.json());
 app.use(cookieParser())
+app.use(morgan("dev"))
+app.use(cors({
+    credentials: true,
+    origin: "http://localhost:5173",
+    methods: [ "GET", "POST", "PUT", "DELETE" ],
+}))
 
-// Required routes
-const authRoute = require("./routes/auth.routes");
-const postRouter = require("./routes/post.routes");
-const userRouter= require("./routes/user.routes")
+/* require routes */
+const authRouter = require("./routes/auth.routes")
+const postRouter = require("./routes/post.routes")
+const userRouter = require("./routes/user.routes")
 
-// Using routes
-app.use("/api/auth",authRoute);
-app.use("/api/post",postRouter);
-app.use("/api/users",userRouter);
+/* using routes */
+app.use("/api/auth", authRouter)
+app.use("/api/posts", postRouter)
+app.use("/api/users", userRouter)
 
 module.exports = app;

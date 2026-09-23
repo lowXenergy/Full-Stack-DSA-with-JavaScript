@@ -1,13 +1,28 @@
-const  express = require("express");
-const authRoute = express.Router();
-const cookie = require("cookie-parser")
+const express = require('express')
 const authController = require("../controllers/auth.controller")
-const identifyUser = require("../middleware/auth.middleware")
+const identifyUser = require("../middlewares/auth.middleware")
 
-authRoute.post("/register",authController.registerController)
 
-authRoute.post("/login",authController.loginController)
+const authRouter = express.Router()
 
-authRoute.get("/get-me",identifyUser,authController.getMeController)
+/**
+ * POST /api/auth/register
+ */
+authRouter.post('/register', authController.registerController)
 
-module.exports = authRoute;
+
+/**
+ * POST /api/auth/login
+ */
+authRouter.post("/login", authController.loginController)
+
+
+/**
+ * @route GET /api/auth/get-me
+ * @desc Get the currently logged in user's information
+ * @access Private
+ */
+authRouter.get("/get-me", identifyUser, authController.getMeController)
+
+
+module.exports = authRouter
