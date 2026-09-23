@@ -1,28 +1,49 @@
-const express = require("express");
-const postRouter = express.Router();
-const PostController = require("../controllers/post.controller");
-const multer = require("multer"); // Read the multer doc --> multer npm
-const upload = multer({storage:multer.memoryStorage()})
-const identifyUser = require("../middleware/auth.middleware")
-// /api/post[protected]
-// caption and image file --> req.body\
+const express = require("express")
+const postRouter = express.Router()
+const postController = require("../controllers/post.controller")
+const multer = require("multer")
+const upload = multer({ storage: multer.memoryStorage() })
+const identifyUser = require("../middlewares/auth.middleware")
 
-postRouter.post("/",upload.single("image"),identifyUser,PostController.createPostController)
 
-// GET  /api/post/ [protected]
-postRouter.get("/",identifyUser,identifyUser,PostController.getPostController);
+/**
+ * @route POST /api/posts [protected]
+ * @description Create a post with the content and image (optional) provided in the request body. The post should be associated with the user that the request come from
+ */
+postRouter.post("/", upload.single("chacha"), identifyUser, postController.createPostController)
 
-// GET /api/post/details/:postid
-// - return a detail about specific post with id. also check wether the post belongs to the user ie is requesting
 
-postRouter.get("/details/:postId",identifyUser,PostController.getPostDetailsController)
+/**
+ * @route GET /api/posts/ [protected]
+ * @description Get all the posts created by the user that the request come from. also return the total number of posts created by the user
+ */
+postRouter.get("/", identifyUser, postController.getPostController)
 
-// @route POST /api/posts/like/:postid
-// @desc like the post
 
-postRouter.post("/like/:postid",identifyUser,PostController.likePostController)
+/**
+ * @route GET /api/posts/details/:postid
+ * @description return an detail about specific post with the id. also check whether the post belongs to the user that the request come from
+ */
+postRouter.get("/details/:postId", identifyUser, postController.getPostDetailsController)
 
-// @route POST /api/posts/unlike/:postid
-postRouter.post("/unlike/:postid",identifyUser,PostController.likePostController)
+
+/**
+ * @route POST /api/posts/like/:postid
+ * @description like a post with the id provided in the request params. 
+ */
+postRouter.post("/like/:postId", identifyUser, postController.likePostController)
+postRouter.post("/unlike/:postId", identifyUser, postController.unLikePostController)
+
+
+/**
+ * @route GET /api/posts/feed
+ * @description get all the post created in the DB
+ * @access private
+ */
+postRouter.get("/feed", identifyUser, postController.getFeedController)
+
+
+
+
 
 module.exports = postRouter

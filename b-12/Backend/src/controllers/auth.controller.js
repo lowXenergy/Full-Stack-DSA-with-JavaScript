@@ -1,165 +1,136 @@
-const userModel = require("../models/user.model");
-// const crypto = require("crypto");// Very low level package
-const bcrypt = require("bcryptjs");// For advacne security
-const jwt = require("jsonwebtoken");
+const userModel = require('../models/user.model')
+const bcrypt = require("bcryptjs")
+const jwt = require("jsonwebtoken")
 
 
-async function registerController(req,res){
-    const {email,username,password,bio,profile_img}=req.body;
-
-    // const isEmailAlreadyExist = await userModel.findOne({email});
-    // if(isEmailAlreadyExist){
-    //     return res.send(409).json({
-    //         message:"User  already exist with same email"
-    //     })
-    // }
-
-    // const isUserNameAlreadyExist = await userModel.findOne({username})
-
-    // if(isUserNameAlreadyExist){
-    //     return res.send(409).json({
-    //         message:"User name already exist"
-    //     })
-    // }
+async function registerController(req, res) {
+    const { email, username, password, bio, profileImage } = req.body
 
     const isUserAlreadyExists = await userModel.findOne({
-        $or:[
-            {username},
-            {email}
+        $or: [
+            { username },
+            { email }
         ]
     })
 
-    if(isUserAlreadyExists){
+    if (isUserAlreadyExists) {
         return res.status(409)
-        .json({
-            message:"User already exists " + (isUserAlreadyExists.email == email ? "Email already exists" : "Username already exists")
-        })
+            .json({
+                message: "User already exists " + (isUserAlreadyExists.email == email ? "Email already exists" : "Username already exists")
+            })
     }
 
-    // const hash = crypto.createHash('sha256').update(password).digest('hex');
-
-    const hash = await bcrypt.hash(password,10);//(password and salt ie. how many time we want to hash, Its just a no)
+    const hash = await bcrypt.hash(password, 10)
 
     const user = await userModel.create({
         username,
         email,
         bio,
-        profile_img,
-        password:hash
+        profileImage,
+        password: hash
     })
 
-    const token = jwt.sign({
-        // User data , unique data
-        id:user._id,
-        username:user.username
-    },
-    process.env.JWT_SECRET,
-    {expiresIn:"1d"}
-)
+    const token = jwt.sign(
+        {
+            id: user._id,
+            username: user.username
+        },
+        process.env.JWT_SECRET,
+        { expiresIn: "1d" }
+    )
 
-    res.cookie("tokens",token)
+    res.cookie("token", token)
 
-    res.status(201)
-    .json({
-        message:"User registered successfully",
-        user:{
-            email:user.email,
-            username:user.username,
-            bio:user.bio,
-            porfile_img:user.profile_img
+    res.status(201).json({
+        message: "User Registered successfully",
+        user: {
+            email: user.email,
+            username: user.username,
+            bio: user.bio,
+            profileImage: user.profileImage
         }
     })
 
+
 }
 
-//Currectly we can login with email being of differnt user and username of being diffrent user. The only thing that should be same is password.
-async function loginController (req,res){
-    const {username,email,password} = req.body
-//     const { userNameOrEmail, password } = req.body;
+async function loginController(req, res) {
+    const { username, email, password } = req.body
 
-// console.log("userNameOrEmail", userNameOrEmail);
-// console.log("password:", password);
-// console.log("body:", req.body);
+    /**
+     * username
+     * password
+     * 
+     * email
+     * password
+     */
+
+    /**
+     * { username:undefined,email:test@test.com,password:test } = req.body
+     */
 
     const user = await userModel.findOne({
-        $or:[
+        $or: [
             {
-                //Array of conditions ie cond 1->1st obj , cond 2-> 2nd obj
-                username:username
+                username: username
             },
             {
-                email:email
+                email: email
             }
         ]
-    })
+    }).select("+password")
 
-
-
-// const user = await userModel.findOne({
-//     $or: [
-//         { username: userNameOrEmail },
-//         { email: userNameOrEmail }
-//     ]
-// });
-
-    if(!user){
+    if (!user) {
         return res.status(404).json({
-            message:"User not found."
+            message: "User not found"
         })
     }
 
-    // const hash = crypto.createHash('sha256').update(password).digest('hex');
+    const isPasswordValid = await bcrypt.compare(password, user.password)
 
-    // const isPasswordValid = hash === user.password;
-
-    const isPasswordValid = await bcrypt.compare(password,user.password);
-
-    if(!isPasswordValid){
+    if (!isPasswordValid) {
         return res.status(401).json({
-            message:"Incorrect password"
+            message: "password invalid"
         })
     }
 
     const token = jwt.sign(
-        {
-            id:user._id,
-            username:user.username 
-        },
+        { id: user._id, username: user.username },
         process.env.JWT_SECRET,
-        {expiresIn:"1d"}
+        { expiresIn: "1d" }
     )
 
-    res.cookie("token",token)
+    res.cookie("token", token)
+
 
     res.status(200)
-    .json({
-        message:"User logged in successfully",
-          user:{
-            email:user.email,
-            username:user.username,
-            bio:user.bio,
-            porfile_img:user.profile_img
-          }
-    })
+        .json({
+            message: "User loggedIn successfully.",
+            user: {
+                username: user.username,
+                email: user.email,
+                bio: user.bio,
+                profileImage: user.profileImage
+            }
+        })
 }
 
-async function getMeController(req,res){
-    const userId = req.user.id;
-    
-    const user = await userModel.findById(userId);
+async function getMeController(req, res) {
+    const userId = req.user.id
+
+    const user = await userModel.findById(userId)
 
     res.status(200).json({
-        user:{
-            username:user.username,
-            email:user.email,
-            bio:user.bio,
-            profile_img:user.profile_img
+        user: {
+            username: user.username,
+            email: user.email,
+            bio: user.bio,
+            profileImage: user.profileImage
         }
     })
-        
 }
 
-module.exports= {
+module.exports = {
     registerController,
     loginController,
     getMeController
