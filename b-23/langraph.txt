@@ -1,0 +1,6 @@
+LangGraph => Used to make work flow. 
+Ai can't work with long work which consider long steps eg writting an article (REsearch , OUtline article , create article, check copy right issues(if copyright found then rewrite the article)).Ai may or may not follow all these instructions. To make ai follow these instruction we use LangGraph.
+Inshort when we want ai to perform some set of instruction that too in sequence we use LangGraph.
+LangGraph:
+    node-[llm,action]
+    edges-[decide the sequence of the workflow i.e direction of the flow]

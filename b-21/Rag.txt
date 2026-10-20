@@ -1,0 +1,22 @@
+Retrival augmented generation
+
+Token:Converting something from human readable form to Ai readable form/token, process is called tokenization. Filler words are removed like the. LLM works on tokenization from of sentence.
+More word => More token => More cost.
+That's why we don't give it the whole chat, we use rag.
+
+RAG concepts:
+    Ingestion: Storing data in rag.
+    Vector Stores: Store where we save/store our data.
+    Retriving: Taking out the valid information from the stored data.
+
+"We don't care how many languages you know. 
+We care if you can debug when things break."
+
+What does rag do?
+Let's suppose you gave an pdf to the ai model and from that pdf you asked a question and that question is relevent to only one section of the pdf. So instead of sending the details of whole pdf to the ai (which will take more time and more cost) it will just send the part of pdf that concerns our question. It gives only that information to ai that is needed and does't provide anything more.
+embedding: Process of converting a word into coordinates using AI. And vector stores are storing it. Identify patterns and put similar words/patterns/things together or close.
+Big content => Small chunks and then embedded is performed and these embedding is stored in Vector Stores [Chroma , pineCone etc.] and then data is returned to us according to our query.
+Our query => Embedding => embedded chunk(vector store)=> Return the coordinates/details of the related embedded query.
+Embedding means converting the information into coordinates with the help of Ai.
+llm can work on multiplle dimensions eg 384, 512 , 1024 , 15500, 2400, 3600k.
+npx yarn add @langchain/community @langchain/core pdf-parse => manually dependencies solve kr deta hai.

@@ -1,0 +1,92 @@
+Don't use js until the class end.
+Why typescript?
+JS work weridly with types. Js is loosely type.Js is little crazy abou types.
+    String + number = String
+    String - number = number or Nan //Not supported in ts.
+    String * number = number
+    Boolean + Boolean = number
+    []+[]=String
+    [1]+1=11(String)
+    [1,2]+1=1,21(String)
+    5+true=6(number)
+    "5"+true=5true(String)
+    {}+[]=[object object] or 0
+    []==false=>true
+To solve all these confussions we use typescript.
+Production pe Js hi chalta hai.
+
+Installation commands.
+npm i typescript --save-dev
+npx tsc --init   
+
+npm i typescript tsc --save
+npm i ts-node --save-dev
+
+npm install -D typescript
+npx tsc --init
+
+Compile it
+npx tsc index.ts
+
+Run it 
+npx tsc --ignoreConfig index.ts && node index.js
+
+Types in ts => Primitive data types => string, number, boolean , array ,object, tuple , void , never.
+Array = fixed type but not the length 
+tuple = fixed size and type
+void=> function not returning anything.
+function greet(name:string: void{
+    console.log("Hello"+name)
+})
+greet("cohort");
+
+Simple error
+function greet(name:string: string{
+    return "Hello"+name
+})
+greet("cohort");
+
+never function: function that never end.
+function greet(name:string):never{
+    throw new Error("something went wrong!")
+}
+greet("cohort")
+Usecase can be seen in request animation frame.
+
+type
+const user = {
+    name:"test",
+    age:34,
+    isMale:true
+}
+
+function greet(data:{name:string,age:number.isMale:boolean}){
+    console.log("hello"+data.name+" your age is "+ data.age)
+}
+greet(user)
+
+ts mai hme generally parameters ke types bta ne pd te hai.
+
+Use type to make it a little short
+type USER={name:string,age:number.isMale:boolean}
+const user :USER={
+    name:"test",
+    age:34,
+    isMale:true
+}
+
+function greet(data:USER){
+    console.log("hello"+data.name+" your age is "+ data.age)
+}//return type is void
+greet(user)
+
+any(any datatype) and Unknown(store whatever data you want to store but check it before using)
+
+let a:any
+let a='hello'
+console.log(a.toUpperCase())
+
+let a:unknown
+let a='hello'
+if((typeof a) === "string")
+    console.log(a.toUpperCase())

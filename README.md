@@ -64,6 +64,32 @@ b-10 - bcrypt js.
 
 b-11 - Authentication.
 
+b-12 - Insta auth and post controllers.
+
+b-13 - Multer.
+
+b-14 - Edge cassing.
+
+b-15 - Error handling and express validator.
+
+b-16 - Moodify.
+
+b-17 -  Error handling and express validator.
+
+b-18 - Socket io.
+
+b-19 - Perplexity.
+
+b-20 - RAG.
+
+b-21 - RAG.
+
+b-22 - Typescript.
+
+b-23 - LangGraph.
+
+b-24 - Google OAuth.
+
 d-00 - JS Essentials.
 
 d-01 - Array.
